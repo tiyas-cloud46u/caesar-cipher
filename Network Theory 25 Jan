@@ -1,0 +1,45 @@
+//ENCRYPTION USING CEASER CIPHER
+//INPUT PLAIN TEXT
+//INPUT SECRET KEY
+//START READING PLAIN TEXT FROM FIRST TO LAST ALPHABET
+//REPLACE THE CHARACTER USING SECRET CODE
+#include<iostream>
+using namespace std;
+#include<string.h>
+int main()
+{
+    char PT[50];
+    int key;
+    int i;
+    char ENC[50],DEC[50];
+    //input plain text and key
+    cout<<"Enter plain Text"<<endl;
+    gets(PT);
+    cout<<"Enter secret key"<<endl;
+    cin>>key;
+    cout<<"Original Message"<<PT<<endl;
+    for(i=0;PT[i]!='\0';i++)
+    {
+        if(PT[i]!='')
+        {
+            ch=PT[i];
+            ch=ch+key;
+            if(ch>='a' && ch<='z')
+            {
+                if(ch>'z')
+                {
+                    ch=ch-'z+'a' -1;
+                }
+            }
+            ENC[i]=ch;
+            if(ch>='A' && ch<='Z')
+            {
+                if(ch>'Z')
+                {
+                    ch=ch- 'Z'+'a'-1;
+                }
+            }
+            ENC[i]=ch;
+        }
+    }
+}
